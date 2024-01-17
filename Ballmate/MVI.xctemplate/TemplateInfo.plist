@@ -34,20 +34,6 @@
 			<key>NotPersisted</key>
 			<true/>
 		</dict>
-		<dict>
-			<key>Identifier</key>
-			<string>withClient</string>
-			<key>Name</key>
-			<string>Client 포함</string>
-			<key>Description</key>
-			<string>Repostiory 역할의 Client 포함</string>
-			<key>Type</key>
-			<string>checkbox</string>
-			<key>Default</key>
-			<string>false</string>
-			<key>NotPersisted</key>
-			<true/>
-		</dict>
 	</array>
 </dict>
 </plist>
