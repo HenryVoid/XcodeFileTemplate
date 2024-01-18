@@ -14,13 +14,13 @@ protocol ___VARIABLE_productName:identifier___ActionProtocol: AnyObject {
 }
 
 // MARK: - State
-final class ___VARIABLE_productName:identifier___Model: ObservableObject, ___VARIABLE_productName:identifier___ModelStateProtocol {
+final class ___VARIABLE_productName:identifier___Model: ObservableObject, ___VARIABLE_productName:identifier___StateProtocol {
     @Dependency(\.toaster) var toaster
 }
 
 
 // MARK: - Action
-extension ___FILEBASENAMEASIDENTIFIER___: ___VARIABLE_productName:identifier___ModelActionProtocol {
+extension ___FILEBASENAMEASIDENTIFIER___: ___VARIABLE_productName:identifier___ActionProtocol {
     
     
     func showToast(_ msg: String?) {

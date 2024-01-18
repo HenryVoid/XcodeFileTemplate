@@ -26,7 +26,7 @@ extension ___FILEBASENAMEASIDENTIFIER___ {
         
         let container = MVIContainer(
             intent: intent,
-            model: model as ___VARIABLE_productName:identifier___ModelStateProtocol,
+            model: model as ___VARIABLE_productName:identifier___StateProtocol,
             modelChangePublisher: model.objectWillChange
         )
         
