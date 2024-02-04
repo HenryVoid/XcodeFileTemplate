@@ -5,22 +5,6 @@ import Foundation
 
 final class Container<Intent, State>: ObservableObject {
     
-    // MARK: Lifecycle
-    
-    init(
-        intent: Intent,
-        state: State,
-        modelChangePublisher: ObjectWillChangePublisher)
-    {
-        self.intent = intent
-        self.state = state
-        
-        modelChangePublisher
-            .receive(on: DispatchQueue.main)
-            .sink(receiveValue: objectWillChange.send)
-            .store(in: &cancellable)
-    }
-    
     // MARK: Internal
     
     let intent: Intent
@@ -30,4 +14,20 @@ final class Container<Intent, State>: ObservableObject {
     
     private var cancellable: Set<AnyCancellable> = []
     
+    
+    // MARK: Lifecycle
+    
+    init(
+        intent: Intent,
+        state: State,
+        modelChangePublisher: ObjectWillChangePublisher
+    ) {
+        self.intent = intent
+        self.state = state
+        
+        modelChangePublisher
+            .receive(on: DispatchQueue.main)
+            .sink(receiveValue: objectWillChange.send)
+            .store(in: &cancellable)
+    }
 }
