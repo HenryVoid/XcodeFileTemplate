@@ -1,17 +1,45 @@
 //___FILEHEADER___
 
 import Foundation
+import Combine
+import Dependencies
 
-final class ___FILEBASENAMEASIDENTIFIER___ {
-    private weak var model: ___VARIABLE_productName:identifier___ActionProtocol?
-    private let repository: ___VARIABLE_productName:identifier___RepositoryType
+protocol ___FILEBASENAMEASIDENTIFIER___Type {
+    var state: ___VARIABLE_productName:identifier___Model.State { get }
+    
+    func send(action: ___VARIABLE_productName:identifier___Model.ViewAction)
+}
 
-    init(model: ___VARIABLE_productName:identifier___ActionProtocol, repository: ___VARIABLE_productName:identifier___RepositoryType) {
-        self.model = model
-        self.repository = repository
+// MARK: ___VARIABLE_name___Intent
+
+final class ___FILEBASENAMEASIDENTIFIER___: ObservableObject {
+    
+    // MARK: Internal
+    
+    typealias State = ___VARIABLE_productName:identifier___Model.State
+    typealias ViewAction = ___VARIABLE_productName:identifier___Model.ViewAction
+    
+    @Published var state: State
+    
+    var cancellable: Set<AnyCancellable> = []
+
+    init(
+        initialState: State
+    ) {
+        self.state = initialState
     }
+}
 
-    func viewOnAppear() {
+extension ___FILEBASENAMEASIDENTIFIER___: IntentType, ___VARIABLE_productName:identifier___IntentType {
+    func mutate(action: ___VARIABLE_productName:identifier___Model.ViewAction, viewEffect: (() -> Void)?) {
+        switch action {
         
+        }
     }
+}
+
+// MARK: Custom Method
+
+extension ___FILEBASENAMEASIDENTIFIER___ {
+    
 }

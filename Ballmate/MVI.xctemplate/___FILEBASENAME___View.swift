@@ -3,33 +3,43 @@
 import Foundation
 import SwiftUI
 
-struct ___FILEBASENAMEASIDENTIFIER___: View {
-    @StateObject private var container: MVIContainer<___VARIABLE_productName:identifier___Intent, ___VARIABLE_productName:identifier___StateProtocol>
+// MARK: ___FILEBASENAMEASIDENTIFIER___
+
+struct ___FILEBASENAMEASIDENTIFIER___: IntentBindingType {
+    @StateObject var container: Container<___VARIABLE_productName:identifier___IntentType, ___VARIABLE_productName:identifier___Model.State>
+    var intent: ___VARIABLE_productName:identifier___IntentType { self.container.intent }
+    var state: ___VARIABLE_productName:identifier___Model.State { self.intent.state }
+}
+
+// MARK: Body
+
+extension ___FILEBASENAMEASIDENTIFIER___: ViewControllable {
     
     var body: some View {
-        ScrollView(.vertical, showsIndicators: false) {
+        VStack(alignment: .leading, spacing: 32) {
             
         }
+        .backTopBar(
+            title: "",
+            backAction: { self.intent.send(action: .back) }
+        )
         .task {
-            self.container.intent.viewOnAppear()
+            self.intent.send(action: .onAppear)
         }
     }
 }
 
-// MARK: - Build
+// MARK: Build
+
 extension ___FILEBASENAMEASIDENTIFIER___ {
-    
-    static func build() -> ___VARIABLE_productName:identifier___View {
-        let repository = ___VARIABLE_productName:identifier___Repository()
-        let model = ___VARIABLE_productName:identifier___Model()
-        let intent = ___VARIABLE_productName:identifier___Intent(model: model, repository: repository)
-        
-        let container = MVIContainer(
-            intent: intent,
-            model: model as ___VARIABLE_productName:identifier___StateProtocol,
-            modelChangePublisher: model.objectWillChange
+    static func build(intent: ___VARIABLE_productName:identifier___Intent) -> UIViewController {
+        return ___FILEBASENAMEASIDENTIFIER___(
+            container: .init(
+                intent: intent as ___VARIABLE_productName:identifier___IntentType,
+                state: intent.state,
+                modelChangePublisher: intent.objectWillChange
+            )
         )
-        
-        return ___VARIABLE_productName:identifier___View(container: container)
+        .viewController
     }
 }

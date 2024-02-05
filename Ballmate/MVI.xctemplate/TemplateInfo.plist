@@ -28,7 +28,7 @@
 			<key>Name</key>
 			<string>Feature Name:</string>
 			<key>Description</key>
-			<string>TCA: Core,VC,View,Coordinator</string>
+			<string>MVI: View, Model, Intent</string>
 			<key>Type</key>
 			<string>text</string>
 			<key>NotPersisted</key>
