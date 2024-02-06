@@ -10,7 +10,7 @@ protocol ___FILEBASENAMEASIDENTIFIER___Type {
     func send(action: ___VARIABLE_productName:identifier___Model.ViewAction)
 }
 
-// MARK: ___VARIABLE_name___Intent
+// MARK: ___VARIABLE_productName:identifier___Intent
 
 final class ___FILEBASENAMEASIDENTIFIER___: ObservableObject {
     
