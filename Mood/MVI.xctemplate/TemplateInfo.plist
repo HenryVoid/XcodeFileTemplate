@@ -7,9 +7,9 @@
 	<key>Kind</key>
 	<string>Xcode.IDEFoundation.TextSubstitutionFileTemplateKind</string>
 	<key>Description</key>
-	<string>Ballmate_MVI</string>
+	<string>Mood_MVI</string>
 	<key>Summary</key>
-	<string>Ballmate_MVI</string>
+	<string>Mood_MVI</string>
 	<key>SortOrder</key>
 	<string>2</string>
 	<key>DefaultCompletionName</key>
